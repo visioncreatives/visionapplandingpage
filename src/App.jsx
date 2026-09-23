@@ -85,7 +85,7 @@ function Header() {
           <LogoLockup size={22} />
         </a>
         <nav aria-label="Main navigation" className="v-desktop-nav">
-          <a href="#services">For creatives</a>
+          <a href="#profile">For creatives</a>
           <a href="#for-clients">For clients</a>
           <Link to="/faq">FAQ</Link>
         </nav>
@@ -115,7 +115,7 @@ function Header() {
             }
           }}
         >
-          <a href="#services" onClick={() => setOpen(false)}>
+          <a href="#profile" onClick={() => setOpen(false)}>
             For creatives
           </a>
           <a href="#for-clients" onClick={() => setOpen(false)}>
@@ -196,8 +196,8 @@ function Hero() {
 }
 
 const features = [
-  ["01", "Posts with services", "#services"],
-  ["02", "Profiles with purpose", "#profile"],
+  ["01", "Profiles with purpose", "#profile"],
+  ["02", "Posts with services", "#services"],
   ["03", "Work, organized", "#folders"],
   ["04", "Projects worth making", "#for-clients"],
 ];
@@ -332,140 +332,136 @@ function Folders() {
   const [selected, setSelected] = useState(folders[0].name);
   const current = folders.find((folder) => folder.name === selected);
   return (
-    <section
-      id="folders"
-      className="v-container v-feature v-folders"
-      aria-labelledby="folders-title"
-    >
-      <FeatureCopy
-        title={
-          <span id="folders-title">
-            A place for
-            <br />
-            <em>every kind of work.</em>
-          </span>
-        }
-      >
-        <p>
-          Group your portfolio into folders, like Film Portraits and Wedding Shoots.
-          Make it easy for clients to browse the work that matters to their
-          project.
-        </p>
-        <p className="v-small-copy">Your style, with a little structure.</p>
-      </FeatureCopy>
-      <figure className="v-folder-visual">
-        <div className="v-folder-heading">
-          <span>Work, curated by you.</span>
-          <Icon name="folder" />
-        </div>
-        <div
-          className="v-folder-options"
-          role="group"
-          aria-label="Preview portfolio folders"
-        >
-          {folders.map((folder) => (
-            <button
-              key={folder.name}
-              aria-pressed={selected === folder.name}
-              aria-controls="folder-preview"
-              onClick={() => setSelected(folder.name)}
-            >
-              <Icon name="folder" />
-              {folder.name}
-            </button>
-          ))}
-        </div>
-        <div
-          className="v-folder-grid"
-          id="folder-preview"
-          aria-live="polite"
-          aria-label={`${selected} folder preview`}
-        >
-          {current.images.map(([file, alt]) => (
-            <img
-              key={file}
-              src={`/homepage/${file}`}
-              alt={alt}
-              width="1152"
-              height="1536"
-              loading="lazy"
-            />
-          ))}
-        </div>
-        <div className="v-folder-bottom">
-          <span>{selected}</span>
-          <span>Portfolio folder</span>
-        </div>
-        <figcaption className="v-example-label">
-          Example folder contents · choose a folder to explore
-        </figcaption>
-      </figure>
-    </section>
-  );
-}
-
-function Hiring() {
-  return (
-    <section
-      id="for-clients"
-      className="v-hiring-band"
-      aria-labelledby="hiring-title"
-    >
-      <div className="v-container v-feature v-feature-reverse">
-        <figure className="v-hiring-visual">
-          <img
-            src="/homepage/application.png"
-            alt="Vision’s Apply to listing screen with an introduction, a proposed price, and a Send application button"
-            loading="lazy"
-            width="632"
-            height="1316"
-          />
+    <section id="folders" className="v-folders-band" aria-labelledby="folders-title">
+      <div className="v-container v-feature v-feature-reverse v-folders">
+        <figure className="v-folder-visual">
+          <div className="v-folder-heading">
+            <span>Work, curated by you.</span>
+            <Icon name="folder" />
+          </div>
+          <div className="v-folder-options" role="group" aria-label="Preview portfolio folders">
+            {folders.map((folder) => (
+              <button
+                key={folder.name}
+                aria-pressed={selected === folder.name}
+                aria-controls="folder-preview"
+                onClick={() => setSelected(folder.name)}
+              >
+                <Icon name="folder" />
+                {folder.name}
+              </button>
+            ))}
+          </div>
+          <div
+            className="v-folder-grid"
+            id="folder-preview"
+            aria-live="polite"
+            aria-label={`${selected} folder preview`}
+          >
+            {current.images.map(([file, alt]) => (
+              <img
+                key={file}
+                src={`/homepage/${file}`}
+                alt={alt}
+                width="1152"
+                height="1536"
+                loading="lazy"
+              />
+            ))}
+          </div>
+          <div className="v-folder-bottom">
+            <span>{selected}</span>
+            <span>Portfolio folder</span>
+          </div>
           <figcaption className="v-example-label">
-            Inside Vision · applying to a project
+            Example folder contents · choose a folder to explore
           </figcaption>
         </figure>
         <FeatureCopy
           title={
-            <span id="hiring-title">
-              Have a project?
+            <span id="folders-title">
+              A place for
               <br />
-              <em>Find your people.</em>
+              <em>every kind of work.</em>
             </span>
           }
         >
           <p>
-            Post a paid job listing and let interested creators come to you.
-            Review their applications and explore their work to find the right
-            fit.
+            Group your portfolio into folders, like Film Portraits and Wedding Shoots.
+            Make it easy for clients to browse the work that matters to their
+            project.
           </p>
-          <ol className="v-hiring-steps">
-            <li>
-              <span>01</span>
-              <div>
-                <strong>Post your project</strong>
-                <p>Share the brief, budget, and what you need.</p>
-              </div>
-            </li>
-            <li>
-              <span>02</span>
-              <div>
-                <strong>Let creators apply</strong>
-                <p>Hear their approach and proposed price.</p>
-              </div>
-            </li>
-            <li>
-              <span>03</span>
-              <div>
-                <strong>Find the right fit</strong>
-                <p>Review applications and get to know their work.</p>
-              </div>
-            </li>
-          </ol>
-          <CTA>Post a Job Listing</CTA>
-          <p className="v-app-note">
-            Open Vision to sign in or create your account.
-          </p>
+          <p className="v-small-copy">Your style, with a little structure.</p>
         </FeatureCopy>
+      </div>
+    </section>
+  );
+}
+
+function Discovery() {
+  return (
+    <section
+      id="for-clients"
+      className="v-discovery-band"
+      aria-labelledby="discovery-title"
+    >
+      <div className="v-container v-discovery">
+        <div className="v-discovery-head">
+          <h2 id="discovery-title">
+            Know what you need?
+            <br />
+            <em>Start here.</em>
+          </h2>
+          <p>
+            Search for a creative or a paid project. If you’re hiring, you can
+            also post a listing and let the right people come to you.
+          </p>
+        </div>
+        <div className="v-discovery-paths">
+          <article className="v-discovery-path">
+            <figure className="v-discovery-visual">
+              <img
+                src="/homepage/search.png"
+                alt="Vision's Detailed search screen with category, location, and price range filters"
+                loading="lazy"
+                width="1320"
+                height="2192"
+              />
+              <figcaption className="v-example-label">Inside Vision · detailed search</figcaption>
+            </figure>
+            <div className="v-discovery-copy">
+              <h3>Search for<br /><em>your match.</em></h3>
+              <p>
+                Explore creatives or paid listings, then refine by category,
+                location, and price.
+              </p>
+              <a className="v-text-link" href={WEB_APP_URL}>
+                Search on Vision <Icon name="arrow" />
+              </a>
+            </div>
+          </article>
+          <article className="v-discovery-path">
+            <figure className="v-discovery-visual">
+              <img
+                className="v-discovery-application"
+                src="/homepage/application.png"
+                alt="Vision’s Apply to listing screen with an introduction, a proposed price, and a Send application button"
+                loading="lazy"
+                width="632"
+                height="1316"
+              />
+              <figcaption className="v-example-label">Inside Vision · applying to a project</figcaption>
+            </figure>
+            <div className="v-discovery-copy">
+              <h3>Post the brief.<br /><em>Meet the talent.</em></h3>
+              <p>
+                Share a paid project and review applications from creators who
+                want to work with you.
+              </p>
+              <CTA>Post a Job Listing</CTA>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
   );
@@ -523,23 +519,25 @@ export default function App() {
             </a>
           ))}
         </div>
-        <Services />
         <Profile />
+        <Services />
         <Folders />
-        <Hiring />
-        <section className="v-container v-final" aria-labelledby="final-title">
-          <p className="v-eyebrow">Your next chapter starts here</p>
-          <h2 id="final-title">
-            Good work deserves
-            <br />
-            <em>more than a like.</em>
-          </h2>
-          <p>Show what you do. Find who you need. Make it happen.</p>
-          <div className="v-cta-pair">
-            <CTA>Join as a Creative</CTA>
-            <CTA secondary>Post a Job Listing</CTA>
+        <Discovery />
+        <section className="v-final-band" aria-labelledby="final-title">
+          <div className="v-container v-final">
+            <p className="v-eyebrow">Your next chapter starts here</p>
+            <h2 id="final-title">
+              Good work deserves
+              <br />
+              <em>more than a like.</em>
+            </h2>
+            <p>Show what you do. Find who you need. Make it happen.</p>
+            <div className="v-cta-pair">
+              <CTA>Join as a Creative</CTA>
+              <CTA secondary>Post a Job Listing</CTA>
+            </div>
+            <PlatformLinks />
           </div>
-          <PlatformLinks />
         </section>
       </main>
       <Footer />
