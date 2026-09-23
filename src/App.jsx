@@ -187,9 +187,6 @@ function Hero() {
       </div>
       <figure className="v-hero-visual">
         <PostExample />
-        <figcaption className="v-example-label">
-          Illustrative post & service preview
-        </figcaption>
       </figure>
     </section>
   );
@@ -228,26 +225,47 @@ function Services() {
         }
       >
         <p>
-          Give every post a next step. Attach a service to your work so someone
-          who loves what they see can explore what you offer and start a
-          booking.
+          Love someone’s work? See their services, book, and check out right
+          from their post. No waiting for replies or going back and forth in DMs.
         </p>
         <a className="v-text-link" href={WEB_APP_URL}>
           Share your work on Vision <Icon name="arrow" />
         </a>
       </FeatureCopy>
-      <figure className="v-service-visual">
-        <img
-          className="v-booking-reference"
-          src="/homepage/booking-post.png"
-          alt="Emi’s Vision post showing a wedding couple in the rain with an Engagement Shoot service from $200 per hour"
-          loading="lazy"
-          width="1320"
-          height="2075"
-        />
-        <figcaption className="v-example-label">
-          Inside Vision · services attached to a post
-        </figcaption>
+      <figure className="v-service-visual" aria-label="Vision post followed by illustrative time selection and checkout screens">
+        <div className="v-service-flow">
+          <div className="v-service-post">
+            <img
+              className="v-booking-reference"
+              src="/homepage/booking-post.png"
+              alt="Emi’s Vision post showing a wedding couple in the rain with an Engagement Shoot service from $200 per hour"
+              loading="lazy"
+              width="1320"
+              height="2075"
+            />
+          </div>
+          <span className="v-flow-connector" aria-hidden="true">→</span>
+          <div className="v-service-next">
+            <div className="v-flow-screen">
+              <div className="v-flow-screen-title">Select a time</div>
+              <div className="v-flow-screen-service">Engagement Shoot <span>· Emi</span></div>
+              <div className="v-flow-choices" aria-label="Illustrative available days">
+                <span>Tue</span><span className="v-flow-selected">Wed</span><span>Thu</span>
+              </div>
+              <div className="v-flow-choices" aria-label="Illustrative available times">
+                <span>10:00</span><span className="v-flow-selected">2:00 PM</span><span>4:00</span>
+              </div>
+              <div className="v-flow-screen-action">Continue</div>
+            </div>
+            <div className="v-flow-screen">
+              <div className="v-flow-screen-title">Review &amp; pay</div>
+              <div className="v-flow-line"><span>Engagement Shoot</span><span>$200/hr</span></div>
+              <div className="v-flow-line"><span>Wednesday · 2:00 PM</span><span>1 hour</span></div>
+              <div className="v-flow-payment">Secure checkout</div>
+              <div className="v-flow-screen-action">Check out</div>
+            </div>
+          </div>
+        </div>
       </figure>
     </section>
   );
@@ -270,9 +288,6 @@ function Profile() {
             width="1080"
             height="2000"
           />
-          <figcaption className="v-example-label">
-            Inside Vision · creator profile
-          </figcaption>
         </figure>
         <FeatureCopy
           title={
@@ -335,10 +350,21 @@ function Folders() {
     <section id="folders" className="v-folders-band" aria-labelledby="folders-title">
       <div className="v-container v-feature v-feature-reverse v-folders">
         <figure className="v-folder-visual">
-          <div className="v-folder-heading">
-            <span>Work, curated by you.</span>
-            <Icon name="folder" />
+          <div className="v-folder-profile">
+            <img
+              src="/homepage/emi-portrait.jpeg"
+              alt=""
+              width="400"
+              height="400"
+              loading="lazy"
+            />
+            <div>
+              <strong>@picsbyemi</strong>
+              <span>Emi · Photographer</span>
+            </div>
+            <span className="v-folder-creative">CREATIVE</span>
           </div>
+          <p className="v-folder-intro">Work, organized by you.</p>
           <div className="v-folder-options" role="group" aria-label="Preview portfolio folders">
             {folders.map((folder) => (
               <button
@@ -373,9 +399,6 @@ function Folders() {
             <span>{selected}</span>
             <span>Portfolio folder</span>
           </div>
-          <figcaption className="v-example-label">
-            Example folder contents · choose a folder to explore
-          </figcaption>
         </figure>
         <FeatureCopy
           title={
@@ -387,11 +410,12 @@ function Folders() {
           }
         >
           <p>
-            Group your portfolio into folders, like Film Portraits and Wedding Shoots.
-            Make it easy for clients to browse the work that matters to their
-            project.
+            Organize your posts into folders for each type of work you do, whether
+            that’s film portraits, weddings, or something else entirely. People
+            can browse what they’re looking for without scrolling through your
+            whole profile.
           </p>
-          <p className="v-small-copy">Your style, with a little structure.</p>
+          <p className="v-small-copy">Like Story Highlights, but for your portfolio.</p>
         </FeatureCopy>
       </div>
     </section>
@@ -427,7 +451,6 @@ function Discovery() {
                 width="1320"
                 height="2192"
               />
-              <figcaption className="v-example-label">Inside Vision · detailed search</figcaption>
             </figure>
             <div className="v-discovery-copy">
               <h3>Search for<br /><em>your match.</em></h3>
@@ -450,7 +473,6 @@ function Discovery() {
                 width="632"
                 height="1316"
               />
-              <figcaption className="v-example-label">Inside Vision · applying to a project</figcaption>
             </figure>
             <div className="v-discovery-copy">
               <h3>Post the brief.<br /><em>Meet the talent.</em></h3>
