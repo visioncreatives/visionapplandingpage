@@ -771,12 +771,12 @@
   }
 }
 @media (max-width: 699px) {
-  .v-mobile-download { display: inline-flex; align-items: center; min-height: 44px; margin-top: 10px; font-size: 12px; border-bottom: 1px solid #a0a49b; }
+  .v-mobile-download { display: inline-flex; align-items: center; min-height: 40px; margin-top: 4px; font-size: 12px; border-bottom: 1px solid #a0a49b; }
   .v-container {
     width: calc(100% - 40px);
   }
   .v-nav {
-    min-height: 76px;
+    min-height: 64px;
   }
   .v-nav-actions {
     display: none;
@@ -797,9 +797,9 @@
   }
   .v-hero {
     grid-template-columns: 1fr;
-    gap: 46px;
-    padding-top: 43px;
-    padding-bottom: 42px;
+    gap: 24px;
+    padding-top: 30px;
+    padding-bottom: 28px;
   }
   .vision-home h1 {
     font-size: clamp(48px, 12.8vw, 72px);
@@ -807,8 +807,11 @@
     margin-top: 0;
   }
   .v-hero-description {
-    margin-top: 23px !important;
+    margin-top: 15px !important;
   }
+  .v-hiring-line { margin-top: 10px !important; }
+  .v-hero .v-cta-pair { margin-top: 18px; }
+  .v-hero .v-app-note { margin-top: 7px !important; }
   .v-hero .v-cta-pair {
     flex-direction: row;
     gap: 8px;
@@ -826,76 +829,95 @@
     font-size: 12px;
   }
   .v-post-image {
-    height: 315px;
+    height: 290px;
   }
+  .v-hero-visual > .v-example-label { margin-top: 8px; }
   .v-feature-index {
-    margin-top: 16px;
-  }
-  .v-feature-index a {
-    font-size: 10px;
-    padding: 18px 10px;
-    gap: 8px;
-  }
-  .v-feature-index svg {
-    width: 13px;
+    display: none;
   }
   .v-feature {
     grid-template-columns: 1fr;
-    gap: 40px;
-    padding-block: 68px;
+    gap: 24px;
+    padding-block: 48px;
   }
   .v-feature-copy {
     max-width: 100%;
   }
   .vision-home h2 {
-    font-size: 45px;
+    font-size: 41px;
   }
   .v-feature-copy > p:not(.v-app-note) {
-    margin-top: 20px;
-    font-size: 15px;
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 1.65;
     max-width: 450px;
   }
+  .v-feature-copy .v-text-link { margin-top: 12px; }
   .v-service-visual {
     max-width: 440px;
     width: 100%;
     justify-self: center;
     height: auto;
   }
+  .v-booking-reference { width: 260px; border-width: 7px; border-radius: 15px; }
+  .v-service-visual { gap: 10px; }
 
   .v-feature-reverse .v-feature-copy {
     grid-row: 1;
   }
   .v-profile-band .v-feature,
   .v-hiring-band .v-feature {
-    padding-block: 66px;
+    padding-block: 48px;
   }
   .v-profile-visual > img,
   .v-hiring-visual > img {
-    width: 290px;
+    width: 235px;
     max-width: 95%;
   }
+  .v-profile-visual > img { border-width: 7px; border-radius: 15px; }
+  .v-profile-visual figcaption,
+  .v-hiring-visual figcaption { margin-top: 9px; }
+  .v-profile-list { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; }
+  .v-profile-list li { padding: 10px 0 0; line-height: 1.4; }
+  .v-profile-list + .v-text-link { margin-top: 12px; }
+  .v-folders { padding-block: 48px; }
+  .v-folders .v-small-copy { display: none; }
   .v-folder-visual {
-    padding: 20px;
+    padding: 14px;
   }
+  .v-folder-heading { font-size: 13px; }
+  .v-folder-options { margin: 14px 0; }
   .v-folder-options button {
     font-size: 11px;
     padding-inline: 10px;
   }
   .v-folder-grid {
-    min-height: 220px;
+    min-height: 150px;
   }
   .v-folder-grid img {
-    height: 220px;
+    height: 150px;
   }
+  .v-folder-bottom { padding-top: 9px; }
   .v-folder-visual figcaption {
     font-size: 9px;
+    margin-top: 10px;
   }
+  .v-hiring-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; margin: 18px 0; }
+  .v-hiring-steps li { display: block; margin: 0; padding-top: 9px; border-top: 1px solid #cbd6dc; line-height: 1.3; }
+  .v-hiring-steps li > span { display: block; margin: 0 0 5px; }
+  .v-hiring-steps strong { display: block; font-size: 11px; }
+  .v-hiring-steps p { display: none; }
+  .v-hiring-visual > img { border-radius: 15px; }
   .v-final {
-    padding-block: 72px;
+    padding-block: 48px;
   }
   .v-final h2 {
-    font-size: 51px;
+    font-size: 46px;
+    margin-top: 14px;
   }
+  .v-final > p:not(.v-eyebrow) { margin-top: 14px; }
+  .v-final .v-cta-pair { margin-top: 18px; }
+  .v-final .v-platform-links { margin-top: 14px; }
   .v-final .v-button {
     padding-inline: 13px;
     font-size: 11px;

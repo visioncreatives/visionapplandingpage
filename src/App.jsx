@@ -85,7 +85,7 @@ function Header() {
           <LogoLockup size={22} />
         </a>
         <nav aria-label="Main navigation" className="v-desktop-nav">
-          <a href="#for-creatives">For creatives</a>
+          <a href="#services">For creatives</a>
           <a href="#for-clients">For clients</a>
           <Link to="/faq">FAQ</Link>
         </nav>
@@ -115,7 +115,7 @@ function Header() {
             }
           }}
         >
-          <a href="#for-creatives" onClick={() => setOpen(false)}>
+          <a href="#services" onClick={() => setOpen(false)}>
             For creatives
           </a>
           <a href="#for-clients" onClick={() => setOpen(false)}>
