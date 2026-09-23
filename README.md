@@ -1,5 +1,7 @@
 # Vision — Landing Page
 
+> **September 2026 homepage review:** the local redesign is on `codex/homepage-redesign`. See [review/REVIEW.md](review/REVIEW.md) for current preview instructions, CTA verification, changed files and checks. The original setup notes below predate this redesign; their placeholder URLs and deployment steps are historical instructions, not approval to publish.
+
 The public marketing landing page for **Vision**, a modern creative marketplace where people can find creatives that match their vision — for content, branding, events, styling, photography, design, and more.
 
 Built with **Vite + React + Tailwind CSS** (JavaScript, no TypeScript). No backend, no database, no auth — just a clean, mobile-first landing page ready for Vercel.
